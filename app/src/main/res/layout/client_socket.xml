@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:padding="10dip">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Discover"
+            android:id="@+id/buttonDiscover"
+            android:onClick="onButtonClickDiscover"
+            android:layout_weight="0.33" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan"
+            android:id="@+id/buttonScan"
+            android:onClick="onButtonClickScan"
+            android:layout_weight="0.33" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Set"
+            android:id="@+id/buttonSet"
+            android:onClick="onButtonClickSet"
+            android:layout_weight="0.33" />
+    </LinearLayout>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fillViewport="true"
+        android:scrollbars = "vertical"
+        android:scrollbarStyle="insideInset">
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:stretchColumns="1">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Fan Group :"
+                    android:id="@+id/stringFangroup"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanGroup"
+                    android:layout_weight="0.5"
+                    android:maxLines="1"
+                    android:textColor="#ffffffff"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Fan Address :"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanAddress"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:layout_weight="0.5"
+                    android:maxLength="2"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ffd0d0d0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Actual Speed :"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/transparent_background" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/sFanActualSpeed"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:maxLength="4"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ffd0d0d0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Actual Value :"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/transparent_background" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/sFanActualValue"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false"
+                    android:maxLength="4"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Target Value :"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanTargetValue"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLines="1"
+                    android:maxLength="4" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Rating Factor[%] :"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanRatingFactor"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Max RPM:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanMaxRPM"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="4"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ff606060">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Current Control Mode:"
+                    android:layout_weight="0.5"
+                    />
+
+                <Spinner
+                    android:id="@+id/spinnerFanControlMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:entries="@array/controlMode_arrays"
+                    android:prompt="@string/controlMode_prompt"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:spinnerMode="dialog" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="RS Priority:"
+                    android:layout_weight="0.34" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner"
+                    android:layout_weight="0.66"
+                    android:spinnerMode="dialog"
+                    android:prompt="@string/RS_Priority_prompt"
+                    android:theme="@style/Theme.Transparent"
+                    android:transitionGroup="false"
+                    android:entries="@array/RS_Priority_arrays"
+                    android:textColor="#ffffffff" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Max PWM[%]:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanMaxPWM"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Min PWM[%]:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanMinPWM"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="P-Factor:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanP_Factor"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="4"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="I-Factor:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanI_Factor"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="4"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Sensor Max:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanSensorMax"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Sensor Min:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanSensorMin"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="3"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Sensor Unit:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/sFanSensorUnit"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="6"
+                    android:maxLines="1" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="P-Band:"
+                    android:layout_weight="0.5" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/sFanP_Band"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:maxLength="2"
+                    android:maxLines="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ffd0d0d0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Serial Number :"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/transparent_background" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/sFanSerialNumber"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ffd0d0d0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Operation Hour :"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/transparent_background" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/sFanOperationHour"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="#ffd0d0d0">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Fan Direction :"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/transparent_background" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/sFanDirection"
+                    android:layout_weight="0.5"
+                    android:textColor="#ffffffff"
+                    android:singleLine="true"
+                    android:background="@drawable/transparent_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:cursorVisible="false"
+                    android:longClickable="false" />
+
+            </LinearLayout>
+        </TableLayout>
+    </ScrollView>
+</LinearLayout>
